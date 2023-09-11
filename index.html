@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Web Topics</div>
+      <div class="btn-wrapper">
+        <button>
+          <div class="icon">
+            <img src="./assets/moon-outline.svg" alt="dark mode SVG" />
+          </div>
+          <div class="mode">Dark Mode</div>
+        </button>
+        <button>
+          <div class="icon">
+            <img src="./assets/heart-outline.svg" alt="favourite SVG" />
+          </div>
+          <div>Favourites</div>
+        </button>
+      </div>
+    </header>
+    <section class="page-heading-container">
+      <div class="page-heading-wrapper">
+        <div class="main-title">Welcome to our website!</div>
+        <div class="subtitle">
+          We have a new design that fresh, modern and easy to use.
+        </div>
+      </div>
+    </section>
+    <main>
+      <div class="display-control">
+        <input
+          type="search"
+          class="search-input"
+          placeholder="Search the website..."
+        />
+        <div class="select-btns-wrapper">
+          <div class="select-wrapper">
+            <label class="sort" for="sort">Sort by:</label>
+            <select name="sort" id="sort">
+              <option value="default">Default</option>
+              <option value="name">Name</option>
+              <option value="author">Author</option>
+            </select>
+          </div>
+          <div class="select-wrapper">
+            <label class="filter" for="filter">Filter by:</label>
+            <select name="filter" id="filter">
+              <option value="default">Default</option>
+              <option value="name">Name</option>
+              <option value="author">Author</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="title-topics-found">"24" Web Topics Found</div>
+      <div class="cards-section-container"></div>
+    </main>
+    <footer></footer>
+  </body>
+</html>

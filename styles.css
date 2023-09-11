@@ -1,0 +1,168 @@
+/* global styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-family: "Nunito Sans", sans-serif;
+  --brand-primary: #0768ac;
+  --brand-secondary: #03c180;
+  --bg_default: #ffffff;
+  --bg_body: #f0f9ff;
+  --lines-color: #dddddd;
+  --body-text: #333333;
+  --heart-color: #dc143c;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bg_default);
+  padding: 15px 50px;
+}
+
+header .logo {
+  font-size: 14px;
+  color: #0768ac;
+  font-weight: 700;
+  padding-top: 7px;
+}
+
+header .btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+header .btn-wrapper button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  background-color: var(--bg_default);
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1.5px solid var(--lines-color);
+}
+
+header .btn-wrapper button .icon {
+  width: 15px;
+  height: 15px;
+}
+
+/* Page Heading Section Styles */
+.page-heading-container {
+  height: 110px;
+  border-top: 1px solid var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-heading-container .page-heading-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-top: 25px;
+}
+
+.page-heading-container .main-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--brand-secondary);
+}
+
+.page-heading-container .subtitle {
+  font-size: 14px;
+  color: var(--body-text);
+}
+
+/* Main Section Styles */
+main {
+  background-color: var(--bg_body);
+  width: auto;
+  height: 100vh;
+  padding: 20px 50px;
+}
+
+main .display-control {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--bg_default);
+  padding-left: 10px;
+  border-radius: 10px;
+  height: 50px;
+}
+
+main .display-control .select-btns-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+main .display-control .select-btns-wrapper .select-wrapper {
+  position: relative;
+  height: 100%;
+  padding-right: 10px;
+}
+
+main .display-control .select-btns-wrapper .select-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 160px;
+  background: url("./assets/chevron-down-outline.svg");
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+main .display-control .select-btns-wrapper label {
+  position: absolute;
+  font-size: 12px;
+  top: 5px;
+  left: 16px;
+}
+
+main .display-control .select-btns-wrapper select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  width: 180px;
+  padding-top: 15px;
+  padding-left: 15px;
+  font-size: 15px;
+  border-left: 1.5px solid var(--lines-color);
+}
+
+main .display-control .search-input {
+  padding-left: 35px;
+  font-size: 16px;
+  width: 100%;
+  background-image: url("./assets/search-outline.svg");
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 15px;
+  border: none;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* main-section-cards styles */
+main .title-topics-found {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
