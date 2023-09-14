@@ -92,7 +92,7 @@ header .btn-wrapper button .icon {
 main {
   background-color: var(--bg_body);
   width: auto;
-  height: calc(100vh - 170px);
+  min-height: calc(100vh - 170px);
   padding: 20px 50px;
 }
 
@@ -165,4 +165,50 @@ main .title-topics-found {
   font-weight: 700;
   margin-top: 15px;
   margin-bottom: 20px;
+}
+
+main .cards-section {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+main .cards-section .card {
+  flex: 0 0 calc(20% - 1em);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: var(--bg_default);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.text {
+  margin-bottom: 20px;
+  font-size: 10px;
+}
+
+.text-weight {
+  font-weight: 700;
+}
+
+.review {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+.review img {
+  width: 15px;
+  height: 15px;
+}
+
+.author {
+  font-size: 10px;
+  color: var(--body-text);
 }
