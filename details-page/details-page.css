@@ -54,15 +54,16 @@ header .btn-wrapper button .icon {
 
 /* Page Heading Section Styles */
 .page-heading-container {
-  height: 110px;
-  border-top: 1px solid var(--brand-primary);
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 20px;
 }
 
 .page-heading-container .page-heading-wrapper {
   display: flex;
+  padding: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: start;
@@ -78,6 +79,33 @@ header .btn-wrapper button .icon {
 .page-heading-container .subtitle {
   font-size: 14px;
   color: var(--body-text);
+}
+
+.page-heading-container .triangle {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.page-heading-container .triangle .blue-triangle {
+  width: 0;
+  height: 0;
+  border-bottom: 60px solid var(--brand-primary);
+  border-right: 90vw solid transparent;
+  transform: scale(1, -1);
+  position: absolute;
+  z-index: 1;
+}
+
+.page-heading-container .triangle .green-triangle {
+  width: 0;
+  height: 0;
+  top: 0;
+  right: 0;
+  border-bottom: 60px solid var(--brand-secondary);
+  border-right: 90vw solid transparent;
+  transform: scale(-1, -1);
+  position: absolute;
 }
 
 /* details-main styles */

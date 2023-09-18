@@ -103,7 +103,7 @@ header .btn-wrapper button .icon.fav-icon {
   top: 0;
 }
 
-.page-heading-container .triangle .blue {
+.page-heading-container .triangle .blue-triangle {
   width: 0;
   height: 0;
   border-bottom: 60px solid var(--brand-primary);
@@ -113,7 +113,7 @@ header .btn-wrapper button .icon.fav-icon {
   z-index: 1;
 }
 
-.page-heading-container .triangle .green {
+.page-heading-container .triangle .green-triangle {
   width: 0;
   height: 0;
   top: 0;
