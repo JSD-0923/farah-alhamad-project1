@@ -103,7 +103,7 @@ header .btn-wrapper button .icon.fav-icon {
   top: 0;
 }
 
-.page-heading-container .triangle .blue {
+.page-heading-container .triangle .blue-triangle {
   width: 0;
   height: 0;
   border-bottom: 60px solid var(--brand-primary);
@@ -113,7 +113,7 @@ header .btn-wrapper button .icon.fav-icon {
   z-index: 1;
 }
 
-.page-heading-container .triangle .green {
+.page-heading-container .triangle .green-triangle {
   width: 0;
   height: 0;
   top: 0;
@@ -128,7 +128,7 @@ header .btn-wrapper button .icon.fav-icon {
 main {
   background-color: var(--bg_body);
   width: auto;
-  min-height: calc(100vh - 170px);
+  min-height: calc(100vh - 168px);
   padding: 20px 50px;
 }
 
@@ -255,7 +255,6 @@ main .cards-section .card .card-content {
 
 main .cards-section .card .card-content .course-title {
   font-weight: 700;
-  margin: 0 0 10px 0;
 }
 
 main .cards-section .card .card-content .review-stars {
@@ -264,6 +263,7 @@ main .cards-section .card .card-content .review-stars {
   display: flex;
   justify-content: flex-start;
 }
+
 main .cards-section .card .card-content .review-stars svg {
   width: 15px;
   height: 15px;
