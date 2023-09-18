@@ -1,0 +1,214 @@
+:root {
+  --brand-primary: #0768ac;
+  --brand-secondary: #03c180;
+  --bg_default: #ffffff;
+  --bg_body: #f0f9ff;
+  --lines-color: #dddddd;
+  --body-text: #333333;
+  --heart-color: #dc143c;
+}
+
+/* global styles */
+* {
+  font-family: "Nunito Sans", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bg_default);
+  padding: 15px 50px;
+}
+
+header .logo {
+  font-size: 14px;
+  color: #0768ac;
+  font-weight: 700;
+  padding-top: 7px;
+}
+
+header .btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+header .btn-wrapper button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  background-color: var(--bg_default);
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1.5px solid var(--lines-color);
+}
+
+header .btn-wrapper button .icon {
+  width: 15px;
+  height: 15px;
+}
+
+/* Page Heading Section Styles */
+.page-heading-container {
+  height: 110px;
+  border-top: 1px solid var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-heading-container .page-heading-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-top: 25px;
+}
+
+.page-heading-container .main-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--brand-secondary);
+}
+
+.page-heading-container .subtitle {
+  font-size: 14px;
+  color: var(--body-text);
+}
+
+/* details-main styles */
+
+.details-topic {
+  background-color: var(--body-text);
+  position: relative;
+}
+
+.details-topic .topic-definition {
+  padding: 3px 50px 30px 250px;
+  width: 62%;
+}
+
+.details-topic .topic-definition .subtitle {
+  font-size: 16px;
+  color: var(--brand-secondary);
+  margin-top: 30px;
+}
+
+.details-topic .topic-definition h1 {
+  padding: 1px 0;
+  color: var(--bg_default);
+}
+
+.details-topic .topic-definition .review {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.details-topic .topic-definition .review svg {
+  width: 20px;
+  height: 20px;
+}
+
+.details-topic .topic-definition p {
+  padding-top: 25px;
+  color: var(--bg_default);
+}
+
+.details-topic .topic-card {
+  position: absolute;
+  top: 30px;
+  right: 200px;
+  background-color: var(--bg_default);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 2px;
+}
+
+.details-topic .topic-card .topic-image {
+  background-image: url(../assets/javascript.jpg);
+  width: 300px;
+  height: 180px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.details-topic .topic-card .author {
+  padding-left: 10px;
+  font-weight: 700;
+}
+
+.details-topic .topic-card .author span {
+  font-weight: 400;
+}
+
+.details-topic .topic-card .favorite-button-wrapper {
+  border: 1px solid var(--lines-color);
+  margin: 10px 15px 15px 15px;
+  padding: 20px 20px 10px 20px;
+}
+
+.details-topic .topic-card .favorite-button-wrapper.interested-in-topic {
+  font-size: 16px;
+}
+
+.details-topic .topic-card .favorite-button-wrapper button {
+  cursor: pointer;
+  background-color: var(--brand-secondary);
+  padding: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px 0 10px 0;
+}
+
+.details-topic .topic-card .favorite-button-wrapper button .button-text {
+  font-size: 20px;
+  color: var(--bg_default);
+}
+
+.details-topic .topic-card .favorite-button-wrapper button .icon {
+  width: 30px;
+  height: 30px;
+}
+
+.details-topic .topic-card .favorite-button-wrapper .unlimited-credits {
+  font-size: 16px;
+  text-align: center;
+  color: var(--lines-color);
+}
+
+.sub-topics-section {
+  background-color: var(--bg_body);
+  padding: 30px 0 50px 250px;
+}
+
+.sub-topics-list {
+  border: 1px solid var(--lines-color);
+  width: fit-content;
+  background-color: var(--bg_default);
+}
+
+.sub-topics-list h1 {
+  padding: 20px 120px 20px 20px;
+}
+
+.sub-topics-list .sub-topic {
+  display: flex;
+  gap: 15px;
+  padding: 20px 120px 20px 20px;
+  border-top: 1px solid var(--lines-color);
+}
+
+.sub-topics-list .sub-topic div {
+  font-size: 16px;
+}
+
+.sub-topics-list .sub-topic .icon {
+  width: 25px;
+  height: 25px;
+}
