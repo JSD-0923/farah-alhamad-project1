@@ -12,8 +12,28 @@
 * {
   font-family: "Nunito Sans", sans-serif;
   box-sizing: border-box;
+  color: var(--body-text);
   margin: 0;
 }
+
+.dark {
+  --brand-primary: #0768ac;
+  --brand-secondary: #03c180;
+  --bg_default: #1a1a1a;
+  --bg_body: #282828;
+  --lines-color: #000000;
+  --body-text: #ededed;
+  --heart-color: #dc143c;
+}
+
+.dark header .btn-wrapper button .icon.moon-icon {
+  background-image: url(../assets/moon-outline.svg);
+}
+
+.dark header .btn-wrapper button .icon.fav-icon {
+  background-image: url(../assets/heart-outline.svg);
+}
+
 /* Header Styles */
 header {
   display: flex;
@@ -52,6 +72,14 @@ header .btn-wrapper button .icon {
   height: 15px;
 }
 
+header .btn-wrapper button .icon.moon-icon {
+  background-image: url(../assets/dark-moon-outline.svg);
+}
+
+header .btn-wrapper button .icon.fav-icon {
+  background-image: url(../assets/dark-heart-outline.svg);
+}
+
 /* Page Heading Section Styles */
 .page-heading-container {
   position: relative;
@@ -59,6 +87,7 @@ header .btn-wrapper button .icon {
   align-items: center;
   justify-content: center;
   padding: 0 20px;
+  background-color: var(--bg_default);
 }
 
 .page-heading-container .page-heading-wrapper {
@@ -111,7 +140,7 @@ header .btn-wrapper button .icon {
 /* details-main styles */
 
 .details-topic {
-  background-color: var(--body-text);
+  background-color: #282828;
   position: relative;
 }
 
@@ -128,7 +157,7 @@ header .btn-wrapper button .icon {
 
 .details-topic .topic-definition h1 {
   padding: 1px 0;
-  color: var(--bg_default);
+  color: white;
 }
 
 .details-topic .topic-definition .review {
@@ -143,14 +172,14 @@ header .btn-wrapper button .icon {
 
 .details-topic .topic-definition p {
   padding-top: 25px;
-  color: var(--bg_default);
+  color: white;
 }
 
 .details-topic .topic-card {
   position: absolute;
   top: 30px;
   right: 200px;
-  background-color: var(--bg_default);
+  background-color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   padding: 2px;
 }
@@ -166,20 +195,27 @@ header .btn-wrapper button .icon {
 .details-topic .topic-card .author {
   padding-left: 10px;
   font-weight: 700;
+  color: #000;
 }
 
 .details-topic .topic-card .author span {
   font-weight: 400;
+  color: #000;
+}
+
+.details-topic .topic-card .author a {
+  color: #0768ac;
 }
 
 .details-topic .topic-card .favorite-button-wrapper {
-  border: 1px solid var(--lines-color);
+  border: 1px solid #ededed;
   margin: 10px 15px 15px 15px;
   padding: 20px 20px 10px 20px;
 }
 
-.details-topic .topic-card .favorite-button-wrapper.interested-in-topic {
+.details-topic .topic-card .favorite-button-wrapper .interested-in-topic {
   font-size: 16px;
+  color: #000;
 }
 
 .details-topic .topic-card .favorite-button-wrapper button {
@@ -196,7 +232,7 @@ header .btn-wrapper button .icon {
 
 .details-topic .topic-card .favorite-button-wrapper button .button-text {
   font-size: 20px;
-  color: var(--bg_default);
+  color: white;
 }
 
 .details-topic .topic-card .favorite-button-wrapper button .icon {
@@ -205,9 +241,9 @@ header .btn-wrapper button .icon {
 }
 
 .details-topic .topic-card .favorite-button-wrapper .unlimited-credits {
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
-  color: var(--lines-color);
+  color: #dddddd;
 }
 
 .sub-topics-section {
@@ -239,4 +275,19 @@ header .btn-wrapper button .icon {
 .sub-topics-list .sub-topic .icon {
   width: 25px;
   height: 25px;
+}
+
+/* footer styles */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 20px;
+  background-color: var(--bg_body);
+}
+
+footer svg {
+  width: 15px;
+  height: 15px;
 }

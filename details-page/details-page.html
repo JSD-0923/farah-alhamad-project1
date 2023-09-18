@@ -10,21 +10,17 @@
     />
     <title>details-page</title>
   </head>
-  <body>
+  <body class="dark">
     <header>
       <div class="logo">Web Topics</div>
       <div class="btn-wrapper">
         <button>
-          <div class="icon">
-            <img src="../assets/moon-outline.svg" alt="dark mode SVG" />
-          </div>
-          <div class="mode">Dark Mode</div>
+          <div class="icon moon-icon"></div>
+          <div class="icon-title">Dark Mode</div>
         </button>
         <button>
-          <div class="icon">
-            <img src="../assets/heart-outline.svg" alt="favourite SVG" />
-          </div>
-          <div>Favourites</div>
+          <div class="icon fav-icon"></div>
+          <div class="icon-title">Favourites</div>
         </button>
       </div>
     </header>
@@ -313,6 +309,23 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <div>Developed with</div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="ionicon"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
+          fill="#dc143c"
+          stroke="#dc143c"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="32"
+        />
+      </svg>
+      <div>© 2023</div>
+    </footer>
   </body>
 </html>
