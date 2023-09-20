@@ -18,6 +18,10 @@
   color: var(--body-text);
 }
 
+a {
+  text-decoration: none;
+}
+
 .dark {
   --brand-primary: #0768ac;
   --brand-secondary: #03c180;
