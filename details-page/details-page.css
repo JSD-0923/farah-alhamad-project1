@@ -117,24 +117,28 @@ header .btn-wrapper button .icon.fav-icon {
 }
 
 .page-heading-container .triangle .blue-triangle {
-  width: 0;
-  height: 0;
-  border-bottom: 60px solid var(--brand-primary);
-  border-right: 90vw solid transparent;
-  transform: scale(1, -1);
   position: absolute;
+  width: 95vw;
+  height: 60px;
+  background: linear-gradient(
+    to left,
+    var(--brand-primary),
+    var(--brand-secondary)
+  );
+  transform: scaleX(-1) scaleY(-1);
+  clip-path: polygon(100% 100%, 100% 0%, 0% 100%);
   z-index: 1;
 }
 
 .page-heading-container .triangle .green-triangle {
-  width: 0;
-  height: 0;
+  position: absolute;
+  width: 90vw;
+  height: 60px;
+  background-color: var(--brand-secondary);
   top: 0;
   right: 0;
-  border-bottom: 60px solid var(--brand-secondary);
-  border-right: 90vw solid transparent;
-  transform: scale(-1, -1);
-  position: absolute;
+  transform: scaleX(-1) scaleY(-1);
+  clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
 }
 
 /* details-main styles */
@@ -290,4 +294,136 @@ footer {
 footer svg {
   width: 15px;
   height: 15px;
+}
+
+/* responsive styles */
+@media (max-width: 1024px) {
+  .details-topic .topic-card {
+    top: 35px;
+    right: 50px;
+  }
+
+  .details-topic .topic-definition {
+    padding: 15px 0 15px 50px;
+    width: 50%;
+  }
+
+  .sub-topics-section {
+    padding: 50px 0 50px 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  header .icon-title {
+    display: none;
+  }
+
+  .details-topic .topic-card {
+    position: static;
+    width: 302px;
+    margin-left: 50px;
+  }
+
+  .details-topic .topic-definition {
+    padding: 15px 0 15px 50px;
+    width: 80%;
+  }
+
+  .sub-topics-section {
+    padding: 50px;
+  }
+
+  .sub-topics-list h1 {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .sub-topics-list .sub-topic {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .sub-topics-list .sub-topic div {
+    font-size: 14px;
+  }
+
+  .sub-topics-list .sub-topic .icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .details-topic {
+    padding-bottom: 50px;
+  }
+
+  .details-topic .topic-definition .subtitle {
+    font-size: 13px;
+    margin-top: 0;
+  }
+
+  .details-topic .topic-definition h1 {
+    font-size: 25px;
+  }
+
+  .details-topic .topic-definition .review svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .details-topic .topic-definition p {
+    padding-top: 20px;
+    font-size: 14px;
+  }
+
+  .page-heading-container .page-heading-wrapper {
+    padding: 20px 0px;
+  }
+
+  .page-heading-container .main-title {
+    font-size: 25px;
+  }
+
+  .page-heading-container .subtitle {
+    font-size: 14px;
+    color: var(--body-text);
+  }
+
+  .page-heading-container .triangle {
+    position: absolute;
+    width: 100%;
+    top: 0;
+  }
+
+  .page-heading-container .triangle .blue-triangle {
+    position: absolute;
+    width: 95vw;
+    height: 30px;
+    background: linear-gradient(
+      to left,
+      var(--brand-primary),
+      var(--brand-secondary)
+    );
+    transform: scaleX(-1) scaleY(-1);
+    clip-path: polygon(100% 100%, 100% 0%, 0% 100%);
+    z-index: 1;
+  }
+
+  .page-heading-container .triangle .green-triangle {
+    position: absolute;
+    width: 90vw;
+    height: 30px;
+    background-color: var(--brand-secondary);
+    top: 0;
+    right: 0;
+    transform: scaleX(-1) scaleY(-1);
+    clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
+  }
+
+  .page-heading-container .page-heading-wrapper {
+    margin-top: 15px;
+  }
 }
