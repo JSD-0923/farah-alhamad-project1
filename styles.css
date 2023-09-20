@@ -136,24 +136,28 @@ header .btn-wrapper button .icon.fav-icon {
 }
 
 .page-heading-container .triangle .blue-triangle {
-  width: 0;
-  height: 0;
-  border-bottom: 60px solid var(--brand-primary);
-  border-right: 90vw solid transparent;
-  transform: scale(1, -1);
   position: absolute;
+  width: 95vw;
+  height: 60px;
+  background: linear-gradient(
+    to left,
+    var(--brand-primary),
+    var(--brand-secondary)
+  );
+  transform: scaleX(-1) scaleY(-1);
+  clip-path: polygon(100% 100%, 100% 0%, 0% 100%);
   z-index: 1;
 }
 
 .page-heading-container .triangle .green-triangle {
-  width: 0;
-  height: 0;
+  position: absolute;
+  width: 90vw;
+  height: 60px;
+  background-color: var(--brand-secondary);
   top: 0;
   right: 0;
-  border-bottom: 60px solid var(--brand-secondary);
-  border-right: 90vw solid transparent;
-  transform: scale(-1, -1);
-  position: absolute;
+  transform: scaleX(-1) scaleY(-1);
+  clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
 }
 
 /* Main Section Styles */
