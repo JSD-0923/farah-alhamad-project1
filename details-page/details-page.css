@@ -149,14 +149,13 @@ header .btn-wrapper button .icon.fav-icon {
 }
 
 .details-topic .topic-definition {
-  padding: 3px 50px 30px 250px;
-  width: 62%;
+  padding: 25px 50px 25px 250px;
+  width: 60%;
 }
 
 .details-topic .topic-definition .subtitle {
   font-size: 16px;
   color: var(--brand-secondary);
-  margin-top: 30px;
 }
 
 .details-topic .topic-definition h1 {
@@ -191,13 +190,13 @@ header .btn-wrapper button .icon.fav-icon {
 .details-topic .topic-card .topic-image {
   background-image: url(../assets/javascript.jpg);
   width: 300px;
-  height: 180px;
+  height: 170px;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .details-topic .topic-card .author {
-  padding-left: 10px;
+  padding: 15px 15px 0 15px;
   font-weight: 700;
   color: #000;
 }
@@ -297,15 +296,14 @@ footer svg {
 }
 
 /* responsive styles */
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .details-topic .topic-card {
     top: 35px;
     right: 50px;
   }
 
   .details-topic .topic-definition {
-    padding: 15px 0 15px 50px;
-    width: 50%;
+    padding: 25px 0 25px 50px;
   }
 
   .sub-topics-section {
@@ -313,7 +311,7 @@ footer svg {
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   header {
     padding: 15px 20px;
   }
@@ -324,8 +322,7 @@ footer svg {
 
   .details-topic .topic-card {
     position: static;
-    width: 302px;
-    margin-left: 50px;
+    width: auto;
   }
 
   .details-topic .topic-definition {
@@ -334,7 +331,7 @@ footer svg {
   }
 
   .sub-topics-section {
-    padding: 50px;
+    padding: 40px 20px;
   }
 
   .sub-topics-list h1 {
@@ -357,7 +354,13 @@ footer svg {
   }
 
   .details-topic {
-    padding-bottom: 50px;
+    padding: 40px 20px;
+  }
+
+  .details-topic .topic-definition {
+    padding: 0;
+    padding-bottom: 40px;
+    width: auto;
   }
 
   .details-topic .topic-definition .subtitle {
@@ -381,6 +384,7 @@ footer svg {
 
   .page-heading-container .page-heading-wrapper {
     padding: 20px 0px;
+    margin-top: 15px;
   }
 
   .page-heading-container .main-title {
@@ -389,41 +393,30 @@ footer svg {
 
   .page-heading-container .subtitle {
     font-size: 14px;
-    color: var(--body-text);
   }
 
-  .page-heading-container .triangle {
-    position: absolute;
-    width: 100%;
-    top: 0;
-  }
-
-  .page-heading-container .triangle .blue-triangle {
-    position: absolute;
-    width: 95vw;
-    height: 30px;
-    background: linear-gradient(
-      to left,
-      var(--brand-primary),
-      var(--brand-secondary)
-    );
-    transform: scaleX(-1) scaleY(-1);
-    clip-path: polygon(100% 100%, 100% 0%, 0% 100%);
-    z-index: 1;
-  }
-
+  .page-heading-container .triangle .blue-triangle,
   .page-heading-container .triangle .green-triangle {
-    position: absolute;
-    width: 90vw;
     height: 30px;
-    background-color: var(--brand-secondary);
-    top: 0;
-    right: 0;
-    transform: scaleX(-1) scaleY(-1);
-    clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
   }
 
-  .page-heading-container .page-heading-wrapper {
-    margin-top: 15px;
+  .details-topic .topic-card .topic-image {
+    width: auto;
+    height: 200px;
+    background-size: cover;
+  }
+
+  .details-topic .topic-card .favorite-button-wrapper button {
+    margin: 10px auto;
+  }
+
+  .sub-topics-list {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .details-topic .topic-card .favorite-button-wrapper button .button-text {
+    font-size: 18px;
   }
 }
