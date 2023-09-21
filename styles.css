@@ -295,8 +295,17 @@ main .cards-section .card .card-content {
   font-size: 13px;
 }
 
+main .cards-section .card .card-content .topic-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 main .cards-section .card .card-content .course-title {
   font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 main .cards-section .card .card-content .review-stars {
@@ -384,6 +393,10 @@ footer svg {
   padding: 8px 30px 3px 8px;
   font-size: 13px;
   font-weight: 700;
+  width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .favourite-section .fav-cards-wrapper .fav-card .review {

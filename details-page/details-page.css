@@ -34,6 +34,10 @@
   background-image: url(../assets/heart-outline.svg);
 }
 
+.dark .sub-topics-section {
+  padding-top: 0;
+}
+
 /* Header Styles */
 header {
   display: flex;
@@ -252,6 +256,7 @@ header .btn-wrapper button .icon.fav-icon {
 .sub-topics-section {
   background-color: var(--bg_body);
   padding: 40px 250px;
+  min-height: calc(100vh - 458px);
 }
 
 .sub-topics-list {
@@ -266,6 +271,7 @@ header .btn-wrapper button .icon.fav-icon {
 
 .sub-topics-list .sub-topic {
   display: flex;
+  flex-shrink: 0;
   gap: 15px;
   padding: 20px 120px 20px 20px;
   border-top: 1px solid var(--lines-color);
@@ -331,7 +337,7 @@ footer svg {
   }
 
   .sub-topics-section {
-    padding: 0px 20px 40px 20px;
+    padding: 40px 20px;
   }
 
   .sub-topics-list h1 {
