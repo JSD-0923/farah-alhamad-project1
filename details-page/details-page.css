@@ -6,6 +6,9 @@
   --lines-color: #dddddd;
   --body-text: #333333;
   --heart-color: #dc143c;
+  --border-radius: 5px;
+  --subtitle-font-size: 14px;
+  --padding: 20px;
 }
 
 /* global styles */
@@ -47,7 +50,7 @@ header {
 }
 
 header .logo {
-  font-size: 14px;
+  font-size: var(--subtitle-font-size);
   color: #0768ac;
   font-weight: 700;
   padding-top: 7px;
@@ -66,7 +69,7 @@ header .btn-wrapper button {
   gap: 5px;
   cursor: pointer;
   background-color: var(--bg_default);
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   padding: 5px 10px;
   border: 1.5px solid var(--lines-color);
 }
@@ -96,7 +99,7 @@ header .btn-wrapper button .icon.fav-icon {
 
 .page-heading-container .page-heading-wrapper {
   display: flex;
-  padding: 20px;
+  padding: var(--padding);
   flex-direction: column;
   justify-content: center;
   align-items: start;
@@ -110,7 +113,7 @@ header .btn-wrapper button .icon.fav-icon {
 }
 
 .page-heading-container .subtitle {
-  font-size: 14px;
+  font-size: var(--subtitle-font-size);
   color: var(--body-text);
 }
 
@@ -248,7 +251,7 @@ header .btn-wrapper button .icon.fav-icon {
 }
 
 .details-topic .topic-card .favorite-button-wrapper .unlimited-credits {
-  font-size: 14px;
+  font-size: var(--subtitle-font-size);
   text-align: center;
   color: #dddddd;
 }
@@ -279,6 +282,7 @@ header .btn-wrapper button .icon.fav-icon {
 
 .sub-topics-list .sub-topic div {
   font-size: 16px;
+  font-weight: 700;
 }
 
 .sub-topics-list .sub-topic .icon {
@@ -292,7 +296,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  padding: 20px;
+  padding: var(--padding);
   background-color: var(--bg_body);
 }
 
@@ -351,7 +355,7 @@ footer svg {
   }
 
   .sub-topics-list .sub-topic div {
-    font-size: 14px;
+    font-size: var(--subtitle-font-size);
   }
 
   .sub-topics-list .sub-topic .icon {
@@ -398,7 +402,7 @@ footer svg {
   }
 
   .page-heading-container .subtitle {
-    font-size: 14px;
+    font-size: var(--subtitle-font-size);
   }
 
   .page-heading-container .triangle .blue-triangle,
