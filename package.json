@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  },
+  "name": "project-1",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JSD-0923/farah-alhamad-project1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JSD-0923/farah-alhamad-project1/issues"
+  },
+  "homepage": "https://github.com/JSD-0923/farah-alhamad-project1#readme"
+}
