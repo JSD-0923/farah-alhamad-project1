@@ -178,6 +178,7 @@ header .btn-wrapper button .icon.fav-icon {
 .details-topic .topic-definition .review svg {
   width: 20px;
   height: 20px;
+  fill: orange;
 }
 
 .details-topic .topic-definition p {
