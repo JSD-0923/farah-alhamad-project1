@@ -60,6 +60,10 @@ select:focus {
   outline: none;
 }
 
+.d-none {
+  display: none;
+}
+
 /* Header Styles */
 header {
   display: flex;

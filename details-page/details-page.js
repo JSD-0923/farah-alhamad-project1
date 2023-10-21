@@ -3,7 +3,6 @@ const modeBtn = document.querySelector(".mode-btn");
 const iconTitle = modeBtn.querySelector(".icon-title");
 let toggleDarkMode = () => {
   if (!document.body.classList.contains("dark")) {
-    console.log("clicked");
     document.body.classList.add("dark");
     iconTitle.textContent = "Light Mode";
   } else {
@@ -18,20 +17,15 @@ const url = new URL(window.location.href);
 const params = new URLSearchParams(url.search);
 const id = params.get("id");
 
-console.log(id);
-
 let fetchTopicDetails = async () => {
   try {
     const url = `https://tap-web-1.herokuapp.com/topics/details/${id}`;
-
     const response = await fetch(url);
-
     if (!response.ok) {
       throw new Error("Something went wrong. Details page failed to load.");
     }
 
     data = await response.json();
-    console.log(data);
   } catch (error) {
     console.error("Something went wrong. Details page failed to load.");
   }

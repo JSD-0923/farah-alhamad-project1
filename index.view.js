@@ -1,7 +1,15 @@
-export let renderTopicsCard = (data) => {
-  if (data.length) {
-    const cardsSection = document.querySelector(".cards-section");
-    data.forEach((item) => {
+const modeBtn = document.querySelector(".mode-btn");
+const iconTitle = document.querySelector("#mode-title");
+const cardsSection = document.querySelector(".cards-section");
+const favCardsSection = document.querySelector(".fav-cards-wrapper");
+const topicsnumber = document.querySelector(".title-topics-found");
+const favBtn = document.querySelector(".favourite-section");
+
+export let renderTopicsCard = (cards) => {
+  cardsSection.innerHTML = "";
+  topicsnumber.textContent = `"${cards.length}" Web Topics Found`;
+  if (cards.length) {
+    cards.forEach((item) => {
       const card = document.createElement("a");
       card.href = `./details-page/details-page.html?id=${item.id}`;
       card.className = "card";
@@ -15,14 +23,14 @@ export let renderTopicsCard = (data) => {
                     <div class="topic-name">${item.category}</div>
                     <div class="course-title">${item.topic}</div>
                     <div class="review-stars">
-                    ${generateStarRating(item.rating)}
-                  </div
+                      ${generateStarRating(item.rating)}
+                    </div>
                     <div class="author">Author: ${item.name}</div>
                   </div>`;
       cardsSection.appendChild(card);
     });
   } else {
-    renderEmptyMsg();
+    renderEmptyMsg(cardsSection);
   }
 };
 
@@ -31,10 +39,9 @@ export let removeLoading = () => {
   mainLoading.remove();
 };
 
-let renderEmptyMsg = () => {
-  const cardsSection = document.querySelector(".cards-section");
-  cardsSection.innerHTML = `
-        <div class="empty-msg">No topcs available</div>
+let renderEmptyMsg = (section) => {
+  section.innerHTML = `
+        <div class="empty-msg">No topics found</div>
     `;
 };
 
@@ -87,17 +94,50 @@ let generateStarRating = (rating) => {
   return starsHtml;
 };
 
-const modeBtn = document.querySelector(".mode-btn");
-const iconTitle = modeBtn.querySelector(".icon-title");
-
 let toggleDarkMode = () => {
   if (!document.body.classList.contains("dark")) {
-    console.log("clicked");
     document.body.classList.add("dark");
     iconTitle.textContent = "Light Mode";
   } else {
     document.body.classList.remove("dark");
     iconTitle.textContent = "Dark Mode";
+  }
+};
+
+let renderFavCardsSection = (data, favoriteIds) => {
+  for (let item of data) {
+    if (favoriteIds.includes(item["id"])) {
+      let favCard = document.createElement("a");
+      favCard.href = `./details-page/details-page.html?id=${item.id}`;
+      favCard.className = "fav-card";
+      const topicImage = document.createElement("div");
+
+      topicImage.style.backgroundImage = `url(./assets/${item.image})`;
+      topicImage.className = "fav-img";
+      favCard.appendChild(topicImage);
+
+      favCard.innerHTML += `
+          <div class="fav-topic">${item.topic}</div>
+        `;
+      favCardsSection.appendChild(favCard);
+    }
+  }
+};
+
+export let toggleFavCardsSection = (data) => {
+  if (!favBtn.classList.contains("d-none")) {
+    favBtn.classList.add("d-none");
+    favCardsSection.innerHTML = "";
+  } else {
+    const favoriteIds = JSON.parse(localStorage.getItem("favoriteTopics"));
+
+    if (favoriteIds.length) {
+      renderFavCardsSection(data, favoriteIds);
+    } else {
+      renderEmptyMsg(favCardsSection);
+    }
+
+    favBtn.classList.remove("d-none");
   }
 };
 
