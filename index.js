@@ -2,6 +2,8 @@ import {
   renderTopicsCard,
   removeLoading,
   toggleFavCardsSection,
+  renderFilterdCategories,
+  setThemeMode,
 } from "./index.view.js";
 
 const favButton = document.querySelector(".favorite-Button");
@@ -31,26 +33,22 @@ let fetchTopicsList = async () => {
   }
 };
 
-let renderFilterdCategories = (cardCategories) => {
-  cardCategories.forEach((category) => {
-    let option = document.createElement("option");
-    option.value = category;
-    option.textContent = category;
-    selectFilterElement.appendChild(option);
-  });
-};
-
-let init = async () => {
-  await fetchTopicsList();
+let prepareCardCategories = () => {
   for (let i = 0; i < data.length; i++) {
     if (!cardCategories.includes(data[i]["category"])) {
       cardCategories.push(data[i]["category"]);
     }
   }
+  renderFilterdCategories(cardCategories);
+};
+
+let init = async () => {
+  setThemeMode();
+  await fetchTopicsList();
+  prepareCardCategories();
   cards = JSON.parse(JSON.stringify(data));
   removeLoading();
   renderTopicsCard(cards);
-  renderFilterdCategories(cardCategories);
 };
 
 let handleSearchInput = () => {

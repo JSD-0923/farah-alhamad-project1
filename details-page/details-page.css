@@ -40,6 +40,12 @@
 .dark .sub-topics-section {
   padding-top: 0;
 }
+.d-none {
+  display: none;
+}
+a {
+  text-decoration: none;
+}
 
 /* Header Styles */
 header {
@@ -196,15 +202,15 @@ header .btn-wrapper button .icon.fav-icon {
 }
 
 .details-topic .topic-card .topic-image {
-  /* background-image: url(../assets/javascript.jpg); */
-  width: 300px;
+  min-width: 300px;
   height: 170px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 .details-topic .topic-card .author {
   padding: 15px 15px 0 15px;
+  max-width: 330px;
   font-weight: 700;
   color: #000;
 }
@@ -302,6 +308,73 @@ footer {
 }
 
 footer svg {
+  width: 15px;
+  height: 15px;
+}
+/* favourite section styles */
+.favourite-section {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg_default);
+  padding: 15px 50px;
+  z-index: 20;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.favourite-section .fav-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.fav-cards-wrapper {
+  display: flex;
+  gap: 20px;
+  padding-top: 15px;
+}
+
+.favourite-section .fav-card {
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--bg_default);
+  padding-bottom: 10px;
+}
+
+.favourite-section .fav-cards-wrapper .fav-card .fav-img {
+  height: 60px;
+  width: 120px;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  border-radius: 5px 5px 0 0;
+}
+
+.favourite-section .fav-cards-wrapper .fav-card .fav-img1 {
+  background-image: url(./assets/react.webp);
+}
+
+.favourite-section .fav-cards-wrapper .fav-card .fav-img2 {
+  background-image: url(./assets/cloud.jpeg);
+}
+
+.favourite-section .fav-cards-wrapper .fav-card .fav-topic {
+  padding: 8px 30px 3px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.favourite-section .fav-cards-wrapper .fav-card .review {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 8px;
+}
+
+.favourite-section .fav-cards-wrapper .fav-card .review svg {
   width: 15px;
   height: 15px;
 }

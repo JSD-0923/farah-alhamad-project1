@@ -4,6 +4,7 @@ const cardsSection = document.querySelector(".cards-section");
 const favCardsSection = document.querySelector(".fav-cards-wrapper");
 const topicsnumber = document.querySelector(".title-topics-found");
 const favBtn = document.querySelector(".favourite-section");
+const selectFilterElement = document.querySelector('select[name="filter"]');
 
 export let renderTopicsCard = (cards) => {
   cardsSection.innerHTML = "";
@@ -37,6 +38,15 @@ export let renderTopicsCard = (cards) => {
 export let removeLoading = () => {
   const mainLoading = document.querySelector("#main-loading");
   mainLoading.remove();
+};
+
+export let renderFilterdCategories = (cardCategories) => {
+  cardCategories.forEach((category) => {
+    let option = document.createElement("option");
+    option.value = category;
+    option.textContent = category;
+    selectFilterElement.appendChild(option);
+  });
 };
 
 let renderEmptyMsg = (section) => {
@@ -98,9 +108,11 @@ let toggleDarkMode = () => {
   if (!document.body.classList.contains("dark")) {
     document.body.classList.add("dark");
     iconTitle.textContent = "Light Mode";
+    localStorage.setItem("themeMode", JSON.stringify("dark"));
   } else {
     document.body.classList.remove("dark");
     iconTitle.textContent = "Dark Mode";
+    localStorage.setItem("themeMode", JSON.stringify("light"));
   }
 };
 
@@ -138,6 +150,38 @@ export let toggleFavCardsSection = (data) => {
     }
 
     favBtn.classList.remove("d-none");
+  }
+};
+
+let setDarkThemeMode = () => {
+  document.body.classList.add("dark");
+  iconTitle.textContent = "Light Mode";
+};
+
+let setLightThemeMode = () => {
+  document.body.classList.remove("dark");
+  iconTitle.textContent = "Dark Mode";
+};
+
+export let setThemeMode = () => {
+  const themeMode = JSON.parse(localStorage.getItem("themeMode"));
+  switch (themeMode) {
+    case "dark":
+      setDarkThemeMode();
+      break;
+    case "light":
+      setLightThemeMode();
+      break;
+    default:
+      const darkThemeMode = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      if (darkThemeMode) {
+        setDarkThemeMode();
+      } else {
+        setLightThemeMode();
+      }
+      break;
   }
 };
 
