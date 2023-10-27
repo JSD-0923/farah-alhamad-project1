@@ -1,19 +1,22 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export const SearchInput = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const navigate = useNavigate();
+  let debounceSearch;
 
   const handleSearch = (e) => {
     let searchValue = e.target.value.toLowerCase();
     setSearchTerm(searchValue);
-    navigate(`/?term=${encodeURIComponent(searchValue)}`);
+
+    clearTimeout(debounceSearch);
+    debounceSearch = setTimeout(() => {
+      props.handleSearchChange(e, "term");
+    }, 300);
   };
 
   return (
     <input
-      onChange={handleSearch}
+      onChange={(e) => handleSearch(e)}
       type="search"
       value={searchTerm}
       className="search-input"

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SearchInput } from "../search-input/SearchInput";
 import { SelectInput } from "../selector/SelectInput";
 import { CardsSection } from "../cards-section/CardsSection";
+import { useNavigate } from "react-router-dom";
 
 export const MainSection = () => {
   const [cardsData, setCardsData] = useState([]);
@@ -13,48 +14,70 @@ export const MainSection = () => {
     new URLSearchParams(window.location.search)
   );
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (queryParams.size) {
+      updateFilteredCards();
+    }
+    prepareCardCategories();
+  }, [cardsData]);
+
+  useEffect(() => {
+    prepareData();
+  }, []);
+
+  useEffect(() => {
+    navigate(`/?${queryParams.toString()}`);
+    updateFilteredCards();
+  }, [queryParams]);
+
   const prepareData = async () => {
     await fetchTopicsList();
-    prepareCardCategories();
-    setQueryParams(new URLSearchParams(window.location.search));
   };
 
-  const handleSearchInput = () => {
-    const term = queryParams.get("term");
-    console.log("term", term);
-    const cards = [...cardsData].filter((card) => {
-      return card?.topic.toLowerCase().includes(term);
-    });
-    console.log("cards", cards);
-    setFilteredCards(cards);
+  const updateFilteredCards = () => {
+    const termValue = queryParams.get("term");
+    const sortValue = queryParams.get("sort");
+    const categoryValue = queryParams.get("filter");
+
+    let tempFilteredCards = [...cardsData];
+    if (termValue) {
+      tempFilteredCards = [...cardsData].filter((card) => {
+        return card?.topic.toLowerCase().includes(termValue);
+      });
+    }
+    if (sortValue) {
+      switch (sortValue) {
+        case "title":
+          tempFilteredCards = [...tempFilteredCards].sort((a, b) => {
+            return a.topic.toLowerCase() >= b.topic.toLowerCase() ? 1 : -1;
+          });
+          break;
+        case "author":
+          tempFilteredCards = [...tempFilteredCards].sort((a, b) => {
+            return a.name.toLowerCase() >= b.name.toLowerCase() ? 1 : -1;
+          });
+          break;
+        default:
+          tempFilteredCards = [...tempFilteredCards].filter((card) => {
+            return card?.topic.toLowerCase().includes("");
+          });
+          break;
+      }
+    }
+    if (categoryValue) {
+      tempFilteredCards = [...tempFilteredCards].filter((card) => {
+        return card["category"].toLowerCase().includes(categoryValue);
+      });
+    }
+    if (!termValue && !sortValue && !categoryValue) {
+      tempFilteredCards = [...cardsData].filter((card) => {
+        return card?.topic.toLowerCase().includes("");
+      });
+    }
+    setFilteredCards(tempFilteredCards);
   };
-
-  //   const handleSortInput = () => {
-  //     const sort = queryParams.get("sort");
-  //     switch (sort) {
-  //       case "title":
-  //         [...filteredCards].sort((a, b) => {
-  //           return a.topic.toLowerCase() >= b.topic.toLowerCase() ? 1 : -1;
-  //         });
-  //         break;
-  //       case "author":
-  //         [...filteredCards].sort((a, b) => {
-  //           return a.name.toLowerCase() >= b.name.toLowerCase() ? 1 : -1;
-  //         });
-  //         break;
-  //       case "reset":
-  //         handleSearchInput();
-  //         break;
-  //     }
-  //   };
-
-  //   const handleFilterInput = () => {
-  //     const category = queryParams.get("category");
-  //     const cards = [...filteredCards].filter((card) => {
-  //       return card["category"].includes(category);
-  //     });
-  //     setFilteredCards(cards);
-  //   };
 
   const fetchTopicsList = async () => {
     try {
@@ -88,31 +111,25 @@ export const MainSection = () => {
       let option = { value: category, optionLabel: category };
       preparedCategoriesData.push(option);
     });
+    console.log("preparedCategoriesData", preparedCategoriesData);
     setCardCategories(preparedCategoriesData);
   };
 
-  const getFilteredCards = () => {
-    console.log("getFilteredCards");
-    handleSearchInput();
-    // handleSortInput();
-    // handleFilterInput();
+  const handleFiltersChange = (e, query) => {
+    let searchValue = e.target.value.toLowerCase();
+    const updatedQueryParams = new URLSearchParams(queryParams);
+    updatedQueryParams.set(query, searchValue);
+    setQueryParams(updatedQueryParams);
   };
-
-  useEffect(() => {
-    prepareData();
-    console.log("first");
-  }, []);
-
-  useEffect(() => {
-    getFilteredCards();
-    console.log("second");
-  }, [queryParams]);
 
   return (
     <main>
       <div className="search-filters-component">
         <div className="search-wrapper">
-          <SearchInput placeholder="Search the website..." />
+          <SearchInput
+            placeholder="Search the website..."
+            handleSearchChange={handleFiltersChange}
+          />
         </div>
         <div className="select-btns-wrapper">
           <SelectInput
@@ -126,6 +143,7 @@ export const MainSection = () => {
               { value: "title", optionLabel: "Topic Title" },
               { value: "author", optionLabel: "Author Name" },
             ]}
+            handleSelectChange={handleFiltersChange}
           />
           <SelectInput
             name="filter"
@@ -134,6 +152,7 @@ export const MainSection = () => {
             label="Filter by:"
             htmlFor="filter"
             values={cardCategories}
+            handleSelectChange={handleFiltersChange}
           />
         </div>
       </div>
