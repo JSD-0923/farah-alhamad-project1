@@ -1,0 +1,140 @@
+.details-topic {
+  background-color: #282828;
+  position: relative;
+}
+
+.details-topic .topic-definition {
+  padding: 25px 50px 25px 250px;
+  width: 60%;
+}
+
+.details-topic .topic-definition .subtitle {
+  font-size: 16px;
+  color: var(--brand-secondary);
+}
+
+.details-topic .topic-definition h1 {
+  padding: 1px 0;
+  color: white;
+}
+
+.details-topic .topic-definition .review {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.details-topic .topic-definition .review svg {
+  width: 20px;
+  height: 20px;
+  fill: orange;
+}
+
+.details-topic .topic-definition p {
+  padding-top: 25px;
+  color: white;
+}
+
+.details-topic .topic-card {
+  position: absolute;
+  top: 30px;
+  right: 120px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 2px;
+}
+
+.details-topic .topic-card .topic-image {
+  min-width: 300px;
+  height: 170px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.details-topic .topic-card .author {
+  padding: 15px 15px 0 15px;
+  max-width: 330px;
+  font-weight: 700;
+  color: #000;
+}
+
+.details-topic .topic-card .author span {
+  font-weight: 400;
+  color: #000;
+}
+
+.details-topic .topic-card .author a {
+  color: #0768ac;
+}
+
+.details-topic .topic-card .favorite-button-wrapper {
+  border: 1px solid #ededed;
+  margin: 10px 15px 15px 15px;
+  padding: 20px 20px 10px 20px;
+}
+
+.details-topic .topic-card .favorite-button-wrapper .interested-in-topic {
+  font-size: 16px;
+  color: #000;
+}
+
+.details-topic .topic-card .favorite-button-wrapper button {
+  cursor: pointer;
+  background-color: var(--brand-secondary);
+  padding: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px 0 10px 0;
+}
+
+.details-topic .topic-card .favorite-button-wrapper button .button-text {
+  font-size: 20px;
+  color: white;
+}
+
+.details-topic .topic-card .favorite-button-wrapper button .icon {
+  width: 30px;
+  height: 30px;
+}
+
+.details-topic .topic-card .favorite-button-wrapper .unlimited-credits {
+  font-size: var(--subtitle-font-size);
+  text-align: center;
+  color: #dddddd;
+}
+
+.sub-topics-section {
+  background-color: var(--bg_body);
+  padding: 40px 250px;
+  min-height: calc(100vh - 458px);
+}
+
+.sub-topics-list {
+  border: 1px solid var(--lines-color);
+  width: fit-content;
+  background-color: var(--bg_default);
+}
+
+.sub-topics-list h1 {
+  padding: 20px 120px 20px 20px;
+}
+
+.sub-topics-list .sub-topic {
+  display: flex;
+  flex-shrink: 0;
+  gap: 15px;
+  padding: 20px 120px 20px 20px;
+  border-top: 1px solid var(--lines-color);
+}
+
+.sub-topics-list .sub-topic div {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.sub-topics-list .sub-topic .icon {
+  width: 25px;
+  height: 25px;
+}

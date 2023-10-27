@@ -1,0 +1,44 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bg_default);
+  padding: 15px 50px;
+}
+
+header .logo {
+  font-size: var(--subtitle-font-size);
+  color: #0768ac;
+  font-weight: 700;
+  padding-top: 7px;
+}
+
+header .btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+header .btn-wrapper button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  background-color: var(--bg_default);
+  border-radius: var(--border-radius);
+  padding: 5px 10px;
+  border: 1.5px solid var(--lines-color);
+}
+
+header .btn-wrapper button .icon {
+  width: 15px;
+  height: 15px;
+}
+
+header .btn-wrapper button .icon.moon-icon {
+  background-image: url(../../assets/dark-moon-outline.svg);
+}
+
+header .btn-wrapper button .icon.fav-icon {
+  background-image: url(../../assets/dark-heart-outline.svg);
+}
