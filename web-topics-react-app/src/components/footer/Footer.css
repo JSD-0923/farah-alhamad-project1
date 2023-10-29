@@ -1,0 +1,14 @@
+/* footer styles */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: var(--padding);
+  background-color: var(--bg_body);
+}
+
+footer svg {
+  width: 15px;
+  height: 15px;
+}

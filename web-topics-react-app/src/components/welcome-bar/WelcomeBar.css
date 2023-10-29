@@ -1,0 +1,59 @@
+.page-heading-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background-color: var(--bg_default);
+}
+
+.page-heading-container .page-heading-wrapper {
+  display: flex;
+  padding: var(--padding);
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-top: 25px;
+}
+
+.page-heading-container .main-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--brand-secondary);
+}
+
+.page-heading-container .subtitle {
+  font-size: var(--subtitle-font-size);
+  color: var(--body-text);
+}
+
+.page-heading-container .triangle {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.page-heading-container .triangle .blue-triangle {
+  position: absolute;
+  width: 95vw;
+  height: 60px;
+  background: linear-gradient(
+    to left,
+    var(--brand-primary),
+    var(--brand-secondary)
+  );
+  transform: scaleX(-1) scaleY(-1);
+  clip-path: polygon(100% 100%, 100% 0%, 0% 100%);
+  z-index: 1;
+}
+
+.page-heading-container .triangle .green-triangle {
+  position: absolute;
+  width: 90vw;
+  height: 60px;
+  background-color: var(--brand-secondary);
+  top: 0;
+  right: 0;
+  transform: scaleX(-1) scaleY(-1);
+  clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
+}

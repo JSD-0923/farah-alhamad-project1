@@ -60,6 +60,10 @@ select:focus {
   outline: none;
 }
 
+.d-none {
+  display: none;
+}
+
 /* Header Styles */
 header {
   display: flex;
@@ -282,7 +286,7 @@ main .cards-section .card .topic-image {
   background-position: 50% 50%;
 }
 
-.topic-image.html {
+/* .topic-image.html {
   background-image: url(./assets/html.png);
 }
 
@@ -292,7 +296,7 @@ main .cards-section .card .topic-image {
 
 .topic-image.nosql {
   background-image: url(./assets/nosql.png);
-}
+} */
 
 main .cards-section .card .card-content {
   padding: var(--padding);
