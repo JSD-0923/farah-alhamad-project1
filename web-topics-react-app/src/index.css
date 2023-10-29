@@ -1,7 +1,9 @@
 @import "../src/components/header/Header.css";
 @import "../src/components/welcome-bar/WelcomeBar.css";
-@import "../src/components/main-section/MainSection.css";
-@import "../src/components/main-details/MainDetails.css";
+@import "../src/pages/home-page/HomePage.css";
+@import "../src/pages/details-page/DetailsPage.css";
+@import "../src/components/fav-section/FavSection.css";
+@import "../src/components/footer/Footer.css";
 
 :root {
   --brand-primary: #0768ac;
@@ -33,4 +35,34 @@ a {
 input:focus,
 select:focus {
   outline: none;
+}
+
+.dark {
+  --brand-primary: #0768ac;
+  --brand-secondary: #03c180;
+  --bg_default: #1a1a1a;
+  --bg_body: #282828;
+  --lines-color: #000000;
+  --body-text: #ededed;
+  --heart-color: #dc143c;
+}
+
+.dark .search-input {
+  background-image: url("./assets/search-outline.svg") !important;
+}
+
+.dark
+  main
+  .search-filters-component
+  .select-btns-wrapper
+  .select-wrapper::after {
+  background-image: url("./assets/chevron-down-outline.svg");
+}
+
+.dark header .btn-wrapper button .icon.moon-icon {
+  background-image: url(./assets/moon-outline.svg);
+}
+
+.dark header .btn-wrapper button .icon.fav-icon {
+  background-image: url(./assets/heart-outline.svg);
 }
